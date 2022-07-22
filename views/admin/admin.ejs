@@ -1,0 +1,44 @@
+<%- include('../partials/header') %>
+<body>
+     
+<!-- Page Header-->
+        <header class="masthead" style="background-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Tufan Kavak</h1>
+                            <span class="subheading">Full-Stack Web Developer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container">
+           
+               
+            
+            <div class="rowr">
+                 <% adminActions.forEach((action)=>{ %>
+                <div class="col-lg-4  mx-auto">
+                    <button id="<%= action.actionId %> " onclick="catchID(this.id)" type="button" class="btn btn-outline-primary btn-block"><%= action.displayName %></button>
+                </div>
+                <%}); %> 
+                
+                </div>
+                
+            </div>  
+            <script>
+                function catchID(clicked_id){
+                    alert(clicked_id);
+                    if(clicked_id==1){
+                        window.location.href='changeHomeImahe';return false;
+                    }
+                    if(clicked_id==4){
+                        window.location.href='addNewBlog';return false;
+                    }
+                }
+            </script>       
+
+        <%- include('../partials/footer') %>
